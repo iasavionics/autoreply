@@ -68,7 +68,8 @@ def send_reply(original_msg):
     smtp = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
     smtp.starttls()
     smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
-    smtp.sendmail(MAILFROM, recipients, msg.as_string())
+    smtp.sendmail(EMAIL_ADDRESS, recipients, msg.as_string())
     smtp.quit()
+
 
     print("Reply sent to:", reply_to)
